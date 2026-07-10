@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qiuwu.example/schemas/task-result.schema.json",
+  "title": "QiuWu AI task result",
+  "type": "object",
+  "required": ["schema_version", "task_id", "mode", "status", "artifacts"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "task_id": {"type": "string", "minLength": 1},
+    "mode": {"enum": ["match", "side"]},
+    "status": {"enum": ["running", "done", "failed"]},
+    "summary": {"type": "object"},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "path"],
+        "properties": {
+          "kind": {"type": "string"},
+          "path": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

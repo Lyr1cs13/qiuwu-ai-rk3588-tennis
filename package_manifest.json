@@ -1,0 +1,26 @@
+{
+  "project": "QiuWu AI",
+  "edition": "public-shell",
+  "target": "RK3588 / ELF2",
+  "license": "AGPL-3.0-only",
+  "entrypoint": "python3 qiuwu.py",
+  "public_repository_policy": {
+    "included": [
+      "unified launcher and private-runtime bridge",
+      "PyQt touch UI and result presentation",
+      "generic OV13855/V4L2 capture interface",
+      "process orchestration and result contracts",
+      "generic MQTT/OSS adapter with example configuration",
+      "public documentation"
+    ],
+    "excluded": [
+      "model weights, training data and calibration samples",
+      "model conversion, quantization and runtime tuning parameters",
+      "inference preprocessing, decoding and trajectory reconstruction",
+      "court mapping, event detection and judgement implementation",
+      "camera firmware, driver patches and production device parameters",
+      "production cloud credentials and internal service contracts",
+      "industrial design and mechanical source files"
+    ]
+  }
+}

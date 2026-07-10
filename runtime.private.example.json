@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "modes": {
+    "match": {
+      "command": ["python3", "/opt/qiuwu-private/bin/run_match.py"],
+      "cwd": "/opt/qiuwu-private"
+    },
+    "side": {
+      "command": ["python3", "/opt/qiuwu-private/bin/run_side.py"],
+      "cwd": "/opt/qiuwu-private"
+    }
+  }
+}

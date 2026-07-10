@@ -1,0 +1,45 @@
+__pycache__/
+*.py[cod]
+*.log
+*.tmp
+
+# private model artifacts
+*.rknn
+*.onnx
+*.pt
+*.pth
+
+# private cloud secrets
+**/cloud/config.json
+**/*secret*
+**/*credential*
+runtime.private.json
+private_runtime/
+internal/
+
+# local media and generated results
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.yuv
+*.csv
+*.json
+!**/cloud/config.example.json
+!package_manifest.json
+!runtime.private.example.json
+!contracts/*.json
+!submission/
+!submission/*.mp4
+!submission/*.pdf
+
+# board runtime outputs
+outputs/
+recordings/
+cloud_process.log
+.side_ball_overlay.tmp.mp4
+body_action_prediction.txt
+side_training_output.*
+tracknet_rknn_output.*
+bounce_events.csv
+judgement.json

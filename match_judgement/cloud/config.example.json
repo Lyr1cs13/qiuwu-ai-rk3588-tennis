@@ -1,0 +1,19 @@
+{
+  "oss": {
+    "access_key_id": "YOUR_ACCESS_KEY_ID",
+    "access_key_secret": "YOUR_ACCESS_KEY_SECRET",
+    "endpoint": "https://oss-cn-shanghai.aliyuncs.com",
+    "bucket_name": "YOUR_BUCKET_NAME",
+    "base_prefix": "videos/dev/tasks"
+  },
+  "iot": {
+    "product_key": "YOUR_PRODUCT_KEY",
+    "device_name": "YOUR_DEVICE_NAME",
+    "device_secret": "YOUR_DEVICE_SECRET",
+    "host_name": "iot-as-mqtt.cn-shanghai.aliyuncs.com",
+    "topic_result": "/sys/YOUR_PRODUCT_KEY/YOUR_DEVICE_NAME/thing/event/property/post",
+    "topic_coord": "/YOUR_PRODUCT_KEY/YOUR_DEVICE_NAME/user/trajectory"
+  },
+  "coord_batch_size": 20,
+  "coord_max_wait_time": 0.5
+}
