@@ -7,6 +7,9 @@
   "public_repository_policy": {
     "included": [
       "unified launcher and private-runtime bridge",
+      "match and side-view pipeline orchestration",
+      "shared model component interfaces and task contracts",
+      "RK3588 three-core runtime plan description",
       "PyQt touch UI and result presentation",
       "generic OV13855/V4L2 capture interface",
       "process orchestration and result contracts",
