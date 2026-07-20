@@ -20,6 +20,7 @@
 - [项目技术文档](submission/技术文档-球悟AI.pdf)
 - [开放范围与知识产权边界](OPEN_SOURCE_SCOPE.md)
 - [RK3588板端验证](docs/BOARD_VALIDATION.md)
+- [OV13855摄像头接入与验证](docs/CAMERA_INTEGRATION.md)
 - [边缘模型角色说明](docs/MODEL_CARDS.md)
 
 ## 项目概述
