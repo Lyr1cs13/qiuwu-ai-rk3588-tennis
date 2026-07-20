@@ -30,6 +30,8 @@ models/private/
 !package_manifest.json
 !runtime.private.example.json
 !contracts/*.json
+!examples/**/*.json
+!examples/**/*.csv
 !submission/
 !submission/*.mp4
 !submission/*.pdf

@@ -14,6 +14,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+from edge_runtime.public_demo import PublicDemoError, run_public_demo
 from runtime_bridge import PrivateRuntime, RuntimeConfigurationError
 
 
@@ -65,6 +66,12 @@ def run_pipeline(args: argparse.Namespace) -> int:
     return 0
 
 
+def run_demo(args: argparse.Namespace) -> int:
+    output_dir = Path(args.output).expanduser() if args.output else ROOT / "outputs" / "public_demo"
+    run_public_demo(ROOT, mode=args.mode, output_dir=output_dir, validate_only=args.validate_only)
+    return 0
+
+
 def check_environment(_: argparse.Namespace) -> int:
     print("球悟AI公开工程检查")
     ok = True
@@ -104,11 +111,17 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--calibrate-only", action="store_true", help="仅请求场地标定")
     run.set_defaults(func=run_pipeline)
 
+    demo = sub.add_parser("demo", help="回放并校验公开脱敏结果样例，不执行模型推理")
+    demo.add_argument("--mode", choices=["match", "side"], default="match")
+    demo.add_argument("--output", help="公开回放报告输出目录")
+    demo.add_argument("--validate-only", action="store_true", help="仅校验样例和结果契约")
+    demo.set_defaults(func=run_demo)
+
     camera = sub.add_parser("camera", help="OV13855摄像头预览与录制")
     camera.add_argument("--device", default="/dev/video11")
     camera.add_argument("--width", type=int, default=1920)
     camera.add_argument("--height", type=int, default=1080)
-    camera.add_argument("--fps", type=float, default=60.0)
+    camera.add_argument("--fps", type=float, default=60.0, help="请求帧率，实际帧率应以V4L2/ISP实测为准")
     camera.add_argument("--headless", action="store_true")
     camera.set_defaults(func=run_camera)
 
@@ -124,7 +137,7 @@ def main(argv: list[str] | None = None) -> int:
         args = parser.parse_args(["gui"])
     try:
         return args.func(args)
-    except (RuntimeConfigurationError, FileNotFoundError) as exc:
+    except (RuntimeConfigurationError, PublicDemoError, FileNotFoundError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 2
     except KeyboardInterrupt:

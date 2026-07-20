@@ -1,0 +1,2 @@
+event_type,frame_index,timestamp_s,x,y,confidence
+out_candidate,208,6.933,950.0,468.0,0.84

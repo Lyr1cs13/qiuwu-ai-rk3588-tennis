@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "task_id": "PUBLIC_MATCH_DEMO_001",
+  "mode": "match",
+  "status": "done",
+  "summary": {
+    "court_state": "locked",
+    "bounce_events": 2,
+    "result_reason": "public replay fixture",
+    "score": {"top": 15, "bottom": 30}
+  },
+  "artifacts": [
+    {"kind": "trajectory_csv", "path": "trajectory.csv"},
+    {"kind": "events_csv", "path": "events.csv"},
+    {"kind": "judgement_json", "path": "task_result.json"}
+  ]
+}

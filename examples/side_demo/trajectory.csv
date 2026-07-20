@@ -1,0 +1,6 @@
+frame_index,timestamp_s,x,y,confidence,source
+204,6.800,852.0,470.0,0.91,fixture
+205,6.833,875.0,455.0,0.94,fixture
+206,6.867,900.0,449.0,0.93,fixture
+207,6.900,926.0,453.0,0.91,fixture
+208,6.933,950.0,468.0,0.89,fixture

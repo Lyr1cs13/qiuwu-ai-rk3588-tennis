@@ -1,6 +1,6 @@
 {
   "project": "QiuWu AI",
-  "edition": "public-shell",
+  "edition": "open-edge-reference",
   "target": "RK3588 / ELF2",
   "license": "AGPL-3.0-only",
   "entrypoint": "python3 qiuwu.py",
@@ -14,6 +14,8 @@
       "generic OV13855/V4L2 capture interface",
       "process orchestration and result contracts",
       "generic MQTT/OSS adapter with example configuration",
+      "executable sanitized result replay and contract validation",
+      "board validation and model integration documentation",
       "public documentation"
     ],
     "excluded": [

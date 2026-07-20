@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "task_id": "PUBLIC_SIDE_DEMO_001",
+  "mode": "side",
+  "status": "done",
+  "summary": {
+    "out_events": 1,
+    "action_segments": 2,
+    "result_reason": "public replay fixture",
+    "score": {"top": 0, "bottom": 0}
+  },
+  "artifacts": [
+    {"kind": "trajectory_csv", "path": "trajectory.csv"},
+    {"kind": "events_csv", "path": "events.csv"},
+    {"kind": "actions_csv", "path": "actions.csv"}
+  ]
+}
